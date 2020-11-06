@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.slider {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slide.current {
+  opacity: 1;
+  transition: 0.4s ease-in-out;
+}
+
+.slide:nth-child(1) {
+  background: url(https://i.picsum.photos/id/360/1366/768.jpg?hmac=z-jfcoEX0HfxIUBRJZTW6gfSbLdcf3cw602XaD8zgVs)
+    no-repeat center;
+  background-size: cover;
+}
+.slide:nth-child(2) {
+  background: url(https://i.picsum.photos/id/555/1366/768.jpg?hmac=-EGFsJ2CPLx-bh5zju4yIejUoRJH3BMvBfKFK5fRH6U)
+    no-repeat center;
+  background-size: cover;
+}
+.slide:nth-child(3) {
+  background: url(https://i.picsum.photos/id/607/1366/768.jpg?hmac=MQ8hkapS8iRiWTXArJm6hiIAWmrmb-M4I_7b0Vv_wgM)
+    no-repeat center;
+  background-size: cover;
+}
+.slide:nth-child(4) {
+  background: url(https://i.picsum.photos/id/292/1366/768.jpg?hmac=j6nRdKqIPtP1E1xGPhEGgWq0oeB2KpqfXr2FheLNLzw)
+    no-repeat center;
+  background-size: cover;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+button#prev:hover,
+button#next:hover {
+  background: white;
+  color: rgb(59, 55, 55);
+  transition: 0.2s ease-in-out;
+}
+
+button#prev {
+  background: none;
+  color: white;
+
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  border-radius: 50%;
+  padding: 13px 15px;
+  border: 2px solid white;
+  cursor: pointer;
+  outline: none;
+}
+
+button#next {
+  background: none;
+  color: white;
+
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  border-radius: 50%;
+  padding: 13px 15px;
+  border: 2px solid white;
+  cursor: pointer;
+  outline: none;
+}
+
+.slide-content {
+  padding: 20px;
+  background: rgba(209, 199, 199, 0.8);
+  position: absolute;
+  bottom: 20%;
+  left: -600px;
+  width: 600px;
+  color: rgb(61, 59, 59);
+  opacity: 0;
+}
+
+.slide.current .slide-content {
+  transform: translateX(600px);
+  opacity: 1;
+  transition: all 0.7s ease-in-out 0.2s;
+}
+
+@media (max-width: 500px) {
+  .slide-content {
+    bottom: -300px;
+    left: 0;
+    width: 100%;
+  }
+
+  .slide.current .slide-content {
+    transform: translateY(-300px);
+  }
+}
